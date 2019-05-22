@@ -1,0 +1,56 @@
+[
+    {
+        "name": "USA",
+        "cities": [
+            {
+                "name": "Los Angeles",
+                "streets": [
+                    {
+                        "name": "Str_1-LA"
+                    },
+                    {
+                        "name": "Str_2-LA"
+                    }
+                ]
+            },
+            {
+                "name": "New York",
+                "streets": [
+                    {
+                        "name": "Str_1-New York"
+                    },
+                    {
+                        "name": "Str_2-New York"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ukraine",
+        "cities": [
+            {
+                "name": "Ternopil",
+                "streets": [
+                    {
+                        "name": "Str_1-Ua_Ternopil"
+                    },
+                    {
+                        "name": "Str_2-Ua_Ternopil"
+                    }
+                ]
+            },
+            {
+                "name": "Lviv",
+                "streets": [
+                    {
+                        "name": "Str_1-Lviv"
+                    },
+                    {
+                        "name": "Str_2-Lviv"
+                    }
+                ]
+            }
+        ]
+    }
+]

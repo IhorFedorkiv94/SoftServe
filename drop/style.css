@@ -1,0 +1,12 @@
+body { 
+    display: flex;
+    justify-content: center;
+    content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+select {
+    margin: 20px;
+    padding: 10px;
+}
