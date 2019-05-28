@@ -16,15 +16,18 @@ fetch('./data.json')
     let currentCountry = null;
     
     selectCountries.addEventListener("change", function(e){
-        selectCities.options.length = 1;
-        selectStreet.options.length = 1;
-
-        currentCountry = data.find(country => country.name === e.target.value);
-        currentCountry.cities.forEach(el => {
-            let option = document.createElement("option");
-            option.text = el.name;
-            selectCities.insertBefore(option, null)
-            selectCities.disabled = false;
+      selectCities.options.length = 1;
+      selectStreet.options.length = 1;
+      currentCountry = data.find(country => country.name === e.target.value);
+      if(!currentCountry){
+        selectCities.disabled = true;
+        selectStreet.disabled = true;
+      }
+      currentCountry.cities.forEach(el => {
+         let option = document.createElement("option");
+         option.text = el.name;
+         selectCities.insertBefore(option, null)
+         selectCities.disabled = false;
         });
     });
     
