@@ -30,18 +30,21 @@ fetch('./data.json')
          selectCities.insertBefore(option, null)
          selectCities.disabled = false;
         });
-      }, 2000)
+      }, 1000)
     });
     
     selectCities.addEventListener('change', function(e){
       const city = currentCountry.cities.find(cities => cities.name === e.target.value);
       selectStreet.options.length = 1;
-      city.streets.forEach(el => {
+      setTimeout(() => {
+        city.streets.forEach(el => {
           let option = document.createElement("option");
           option.text = el.name;
           selectStreet.insertBefore(option, null)
           selectStreet.disabled = false;
         });
+      },1000)
+      
     });
   })
   .catch(err => {
