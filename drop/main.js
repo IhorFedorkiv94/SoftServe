@@ -33,6 +33,7 @@ fetch('./data.json')
       }, 1000)
     });
     
+    
     selectCities.addEventListener('change', function(e){
       const city = currentCountry.cities.find(cities => cities.name === e.target.value);
       selectStreet.options.length = 1;
