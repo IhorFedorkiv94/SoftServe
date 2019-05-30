@@ -23,23 +23,19 @@ fetch('./data.json')
     
     let currentCountry = null;
     
-    selectCountries.addEventListener("change", function(e){
-        selectCities.options.length = 1;
-        selectStreet.options.length = 1;
-        currentCountry = data.find(country => country.name === e.target.value);
-        if(!currentCountry){
+    fillCountriesSelect();
+ 
+    countries.addEventListener('change', e => {
+      cities.options.length = 1;
+      streets.options.length = 1;
+      
+      currentCountry = data.find(c => c.name === e.target.value);
+      if(!currentCountry){
         selectCities.disabled = true;
         selectStreet.disabled = true;
         }
-        setTimeout(() => {
-        currentCountry.cities.forEach(el => {
-         let option = document.createElement("option");
-         option.text = el.name;
-         selectCities.insertBefore(option, null)
-         selectCities.disabled = false;
-        });
-      }, 1000)
-    });
+      currentCountry.cities.forEach(city => addOption(cities, city.name))
+    })
     
     
     selectCities.addEventListener('change', function(e){
