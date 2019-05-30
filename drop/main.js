@@ -38,19 +38,11 @@ fetch('./data.json')
     })
     
     
-    selectCities.addEventListener('change', function(e){
-      const city = currentCountry.cities.find(cities => cities.name === e.target.value);
-      selectStreet.options.length = 1;
-      setTimeout(() => {
-        city.streets.forEach(el => {
-          let option = document.createElement("option");
-          option.text = el.name;
-          selectStreet.insertBefore(option, null)
-          selectStreet.disabled = false;
-        });
-      },1000)
-      
-    });
+    cities.addEventListener('change', e => {
+      streets.options.length = 1;
+      const city = currentCountry.cities.find(c => c.name === e.target.value);
+      city.streets.forEach(s => addOption(streets, s.name));
+    })
   })
   .catch(err => {
     console.error('Fetch Error -', err); 
