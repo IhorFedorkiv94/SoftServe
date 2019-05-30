@@ -1,6 +1,6 @@
-let selectCountries = document.getElementById("drop-list-countries");
-let selectCities = document.getElementById("drop-list-cities");
-let selectStreet = document.getElementById("drop-list-street");
+const countries = document.querySelector('#countries');
+const cities = document.querySelector('#cities');
+const streets = document.querySelector('#streets');
 
 fetch('./data.json')
   .then(response => {
