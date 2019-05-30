@@ -1,5 +1,6 @@
 [
     {
+        "id" : 1,
         "name": "USA",
         "cities": [
             {
@@ -27,6 +28,7 @@
         ]
     },
     {
+        "id" : 2,
         "name": "Ukraine",
         "cities": [
             {
