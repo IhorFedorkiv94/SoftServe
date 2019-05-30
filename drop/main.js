@@ -7,13 +7,19 @@ fetch('./data.json')
     return response.json()
   })
   .then(data => {
-    
+
     const addOption = (select, val ) => {
       const opt = document.createElement('option')
       opt.innerText = val;
       select.appendChild(opt)
       select.disabled = false;
     }
+
+    const fillCountriesSelect = () => {
+      data.forEach(country => {
+        addOption(countries, country.name);
+      });
+    };
     
     let currentCountry = null;
     
