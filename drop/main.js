@@ -7,11 +7,13 @@ fetch('./data.json')
     return response.json()
   })
   .then(data => {
-    data.forEach(el => {
-      let option = document.createElement("option");
-      option.text = el.name;
-      selectCountries.insertBefore(option, null)
-    });
+    
+    const addOption = (select, val ) => {
+      const opt = document.createElement('option')
+      opt.innerText = val;
+      select.appendChild(opt)
+      select.disabled = false;
+    }
     
     let currentCountry = null;
     
