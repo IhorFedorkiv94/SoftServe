@@ -1,5 +1,6 @@
-import { addOption, fillCountriesSelect, cleanOptions } from "./dataFillContent";
-import { disabledOtherDropdown } from "./disabledDropdown"
+import { addOption, fillCountriesSelect } from "./dataFillContent";
+import { disabledOtherDropdown } from "./disabledDropdown";
+import {cleanOptions} from "./cleanOption";
 
 const countries = document.querySelector('#countries');
 const cities = document.querySelector('#cities');
