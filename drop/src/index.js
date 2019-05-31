@@ -25,7 +25,7 @@ fetch('./src/data.json')
     cities.addEventListener('change', event => {
       cleanOptions(streets);
       const city = currentCountry.cities.find(cityName => cityName.name === event.target.value);
-      city.streets.forEach(s => addOption(streets, s.name));
+      city.streets.forEach(street => addOption(streets, street.name));
     });
   })
   .catch(err => {
