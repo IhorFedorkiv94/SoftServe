@@ -29,7 +29,7 @@ http.createServer((req, res) => {
         res.writeHead(200, {"Content-Type": "application/javascript"});
         res.end(script);
     }
-    else if(pathname.includes(' data.json')) {
+    else if(pathname.includes('data.json')) {
         res.writeHead(200, {"Content-Type": "application/json"});
         res.end(dataFile);
     }
