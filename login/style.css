@@ -16,13 +16,19 @@ div.div--input input {
     outline: none;
     
 }
-div.div--input span.error, 
-div.div--input span.errorPas,
-div.div--input span.testPasword {
-   display: block;
-   margin: 2px;
-   font-size: 14px;
-   color: red;
-   margin: -10px 0px 5px 20px;
-   
+
+.error-message {
+    display: block;
+    margin: 2px;
+    font-size: 14px;
+    color: red;
+    margin: -10px 0px 5px 20px;
+}
+.has-error {
+    border: 2px solid red;
+}
+.validInfo {
+    position: absolute;
+    top:0;
+
 }
