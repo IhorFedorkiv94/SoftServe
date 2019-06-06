@@ -2,13 +2,10 @@ const fs = require('fs');
 const http = require('http');
 const url = require('url');
 
-
 const index = fs.readFileSync('./index.html');
 const style = fs.readFileSync('./src/style.css');
 const dataFile = fs.readFileSync('./src/data.json');
 const script = fs.readFileSync('./dist/main.js');
-
-// const items = JSON.parse(dataFile);
 
 const hostname = 'localhost';
 const port = 8080;
