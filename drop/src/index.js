@@ -1,7 +1,7 @@
-import { addOption, fillCountriesSelect } from "./dataFillContent";
-import { disabledOtherDropdown } from "./disabledDropdown";
+import {addOption, fillCountriesSelect} from "./dataFillContent";
+import {disabledOtherDropdown} from "./disabledDropdown";
 import {cleanOptions} from "./cleanOption";
-import  { countriesName, cityArray, streetArray } from "./fetch"
+import  {countriesName, cityArray, streetArray} from "./fetch"
 
 const countries = document.querySelector('#countries');
 const cities = document.querySelector('#cities');
@@ -21,8 +21,5 @@ countries.addEventListener('change', event => {
 cities.addEventListener('change', event => {
   cleanOptions(streets, streets);
   streetArray.forEach(el => el.cities.filter(cityName => {
-    if(cityName.name === event.target.value){
-      cityName.streets.forEach(street => addOption(streets, street.name))
-    }
-  }));
+   cityName.name === event.target.value ? cityName.streets.forEach(street => addOption(streets, street.name)) : ''}));
 });
