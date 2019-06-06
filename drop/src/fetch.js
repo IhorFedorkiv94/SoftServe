@@ -13,6 +13,6 @@ fetch("./src/data.json")
     });
 const getCountries = data =>  countriesName = data;
 const getCity = data => cityArray = data.filter(country => country.cities);
-const getStreet = data => data.filter(el => streetArray.push(el));
+const getStreet = data => data.filter(streets => streetArray.push(streets));
  
 export { countriesName, cityArray, streetArray }
