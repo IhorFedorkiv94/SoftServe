@@ -1,12 +1,18 @@
-import dataOne from "./data.json"
-const cuntriesName = dataOne;
-let cuntriesArray = null;
+let countriesName;
+let cityArray = null;
+let streetArray = [];
 
-const getCity = (data, ms) => {
-    setTimeout(() => {
-        cuntriesArray = data.filter(country => country.cities);
-    }, ms)
-}
-getCity(cuntriesName, 2000);
-
-export {cuntriesName, cuntriesArray}
+fetch("./src/data.json")
+    .then(res => res.json())
+    .then(data => {
+        getCountries(data);
+        getCity(data);
+        getStreet(data);
+    }).catch(error => {
+        console.log("Somthing went wrong" + error)
+    });
+const getCountries = data =>  countriesName = data;
+const getCity = data => cityArray = data.filter(country => country.cities);
+const getStreet = data => data.filter(streets => streetArray.push(streets));
+ 
+export {countriesName, cityArray, streetArray}

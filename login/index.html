@@ -3,20 +3,25 @@
     <link rel="stylesheet" href="./style.css" />
 </head>  
 <body>
-        
+    <ul class="validInfo">
+        <li>Email must have @ and .</li>
+        <li>Password must have capital leter</li>
+        <li>Password must have one or more number</li>
+        <li>Password must have 8 or more symbol </li>
+    </ul>
     <div class="div--input">
         <label for="mail">E-mail</label>
         <input type="text" id="mail">
-        <span id="err" class="error"></span>
 
         <label for="password">Password</label>
         <input type="password" id="password">
-        <span id="errPas" class="errorPas"></span>
 
         <label for="repeatPassword">Password Verification</label>
         <input type="password" id="repeatPassword">
-        <span id="testPas" class="testPasword"></span>
     </div>
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./config.js"></script>
+    <script type="module" src="./rules.js"></script>
+    <script type="module" src="./validate.js"></script>
     
-    <script src="./main.js"></script>
 </body>
