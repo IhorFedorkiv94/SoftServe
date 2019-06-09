@@ -16,7 +16,9 @@ div.div--input input {
     outline: none;
     
 }
-
+.succes {
+    border: 1px solid green;
+}
 .error-message {
     display: block;
     margin: 2px;
