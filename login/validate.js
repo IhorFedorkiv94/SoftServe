@@ -3,16 +3,15 @@ import { validate} from './rules.js'
 export function validateInput(rules) {
     return function(event) {
         const { value } = event.target;
+        //const value = event.target.value;
         clearErrorMessage(event.target);
         for (let i = 0; i < rules.length; i++) {
           const error = validate(rules[i], value);
-          if (error) {
-            displayErrorMessage(event.target, error);
-          }
+          error ? displayErrorMessage(event.target, error) : ""
         }
     }
   }
-  
+
   function clearErrorMessage(element) {
       const errorMessageEl = element.nextElementSibling;
       element.classList.remove("has-error");
