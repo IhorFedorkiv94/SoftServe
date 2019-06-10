@@ -2,6 +2,7 @@ import {addOption, fillCountriesSelect} from "./dataFillContent";
 import {disabledOtherDropdown} from "./disabledDropdown";
 import {cleanOptions} from "./cleanOption";
 import  {countriesName, cityArray, streetArray} from "./fetch"
+import _ from "lodash"
 
 const countries = document.querySelector('#countries');
 const cities = document.querySelector('#cities');
@@ -13,13 +14,13 @@ setTimeout(() => {
 
 countries.addEventListener('change', event => {
   cleanOptions(cities, streets);
-  currentCountry = cityArray.find(country => country.name === event.target.value);
+  currentCountry = _.find(cityArray, country => country.name === event.target.value);
   disabledOtherDropdown(currentCountry, cities, streets);
-  currentCountry.cities.forEach(city => addOption(cities, city.name));
+  _.forEach(currentCountry.cities, city => addOption(cities, city.name));
 });
 
 cities.addEventListener('change', event => {
   cleanOptions(streets, streets);
-  streetArray.forEach(el => el.cities.filter(cityName => {
-   cityName.name === event.target.value ? cityName.streets.forEach(street => addOption(streets, street.name)) : ''}));
+  _.forEach(streetArray, el => _.filter(el.cities, cityName => {
+   cityName.name === event.target.value ? _.forEach(cityName.streets, street => addOption(streets, street.name)) : ''}));
 });
