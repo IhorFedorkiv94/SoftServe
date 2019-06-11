@@ -8,6 +8,7 @@ const countries = document.querySelector('#countries');
 const cities = document.querySelector('#cities');
 const streets = document.querySelector('#streets');
 let currentCountry;
+
 setTimeout(() => {
   fillCountriesSelect(countriesName, countries);
 },1000);
